@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KugpJeNJUoEsM4J8oaQeCEhEtL6c8Bq6AQDiYwVOElEvtkGtAoSeqaojCRbdkW8TO2HkYDj4FC3Hm/qRz/CFNQ==",
+  "dgSpecHash": "zau7xXSTsRG3kAVYFGFd/e1lacA6Z8Pw7c68zjvIDefbcZPraKBii9hXKOK0+prb5TeQI6FAgVOR1+KYRIu29Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Alen\\Documents\\GitHub\\lab-5x-913-Iaguta-Alen-Mihael\\VSLab\\VSLab.csproj",
+  "projectFilePath": "C:\\Users\\Alen\\Documents\\GithubPrivate\\Chess-Web-API\\VSLab\\VSLab.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alen\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Alen\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
