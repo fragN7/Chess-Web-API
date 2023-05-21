@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\VSLab3.props" />
+</Project>
