@@ -61,6 +61,27 @@ namespace VSLab.Migrations
                     b.ToTable("tblUserProfiles");
                 });
 
+            modelBuilder.Entity("VSLab.Data.tblChatMessage", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+
+                    b.Property<string>("message")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("username")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("tblChatMessages");
+                });
+
             modelBuilder.Entity("VSLab.Data.tblChessChampion", b =>
                 {
                     b.Property<int>("ID")

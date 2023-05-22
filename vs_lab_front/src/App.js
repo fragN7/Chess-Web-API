@@ -29,7 +29,7 @@ function App() {
       setUserid(storedUserid);
     }
     if (storedRows) {
-      setUserid(storedRows);
+      setRows(storedRows);
     }
   }, []);
 

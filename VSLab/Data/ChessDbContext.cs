@@ -12,6 +12,9 @@ namespace VSLab.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<tblChatMessage>()
+                .HasKey(c => c.ID);
+            
             modelBuilder.Entity<tblChessPlayer>()
                 .HasOne<tblUserProfile>(s => s.TblUser)
                 .WithMany(g => g.ChessPlayers)
@@ -46,5 +49,6 @@ namespace VSLab.Data
         public virtual DbSet<tblChessPlayer> tblChessPlayers { get; set; } = default!;
         public virtual DbSet<tblChessChampion> tblChessChampions { get; set; } = default!;
         public virtual DbSet<tblUserProfile> tblUserProfiles { get; set; } = default!;
+        public virtual DbSet<tblChatMessage> tblChatMessages { get; set; } = default!;
     }
 }
