@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alen\\Documents\\GitHub\\lab-5x-913-Iaguta-Alen-Mihael\\Test\\Test.csproj": {}
+    "C:\\Users\\Alen\\Documents\\GithubPrivate\\Chess-Web-API\\Test\\Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alen\\Documents\\GitHub\\lab-5x-913-Iaguta-Alen-Mihael\\Test\\Test.csproj": {
+    "C:\\Users\\Alen\\Documents\\GithubPrivate\\Chess-Web-API\\Test\\Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alen\\Documents\\GitHub\\lab-5x-913-Iaguta-Alen-Mihael\\Test\\Test.csproj",
+        "projectUniqueName": "C:\\Users\\Alen\\Documents\\GithubPrivate\\Chess-Web-API\\Test\\Test.csproj",
         "projectName": "Test",
-        "projectPath": "C:\\Users\\Alen\\Documents\\GitHub\\lab-5x-913-Iaguta-Alen-Mihael\\Test\\Test.csproj",
+        "projectPath": "C:\\Users\\Alen\\Documents\\GithubPrivate\\Chess-Web-API\\Test\\Test.csproj",
         "packagesPath": "C:\\Users\\Alen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alen\\Documents\\GitHub\\lab-5x-913-Iaguta-Alen-Mihael\\Test\\obj\\",
+        "outputPath": "C:\\Users\\Alen\\Documents\\GithubPrivate\\Chess-Web-API\\Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Alen\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Alen\\Documents\\GitHub\\lab-5x-913-Iaguta-Alen-Mihael\\VSLab\\VSLab.csproj": {
-                "projectPath": "C:\\Users\\Alen\\Documents\\GitHub\\lab-5x-913-Iaguta-Alen-Mihael\\VSLab\\VSLab.csproj"
+              "C:\\Users\\Alen\\Documents\\GithubPrivate\\Chess-Web-API\\VSLab\\VSLab.csproj": {
+                "projectPath": "C:\\Users\\Alen\\Documents\\GithubPrivate\\Chess-Web-API\\VSLab\\VSLab.csproj"
               }
             }
           }
@@ -165,14 +165,14 @@
         }
       }
     },
-    "C:\\Users\\Alen\\Documents\\GitHub\\lab-5x-913-Iaguta-Alen-Mihael\\VSLab\\VSLab.csproj": {
+    "C:\\Users\\Alen\\Documents\\GithubPrivate\\Chess-Web-API\\VSLab\\VSLab.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alen\\Documents\\GitHub\\lab-5x-913-Iaguta-Alen-Mihael\\VSLab\\VSLab.csproj",
+        "projectUniqueName": "C:\\Users\\Alen\\Documents\\GithubPrivate\\Chess-Web-API\\VSLab\\VSLab.csproj",
         "projectName": "VSLab",
-        "projectPath": "C:\\Users\\Alen\\Documents\\GitHub\\lab-5x-913-Iaguta-Alen-Mihael\\VSLab\\VSLab.csproj",
+        "projectPath": "C:\\Users\\Alen\\Documents\\GithubPrivate\\Chess-Web-API\\VSLab\\VSLab.csproj",
         "packagesPath": "C:\\Users\\Alen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alen\\Documents\\GitHub\\lab-5x-913-Iaguta-Alen-Mihael\\VSLab\\obj\\",
+        "outputPath": "C:\\Users\\Alen\\Documents\\GithubPrivate\\Chess-Web-API\\VSLab\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Alen\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -254,6 +254,18 @@
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
               "version": "[6.30.0, )"
+            },
+            "Microsoft.ML": {
+              "target": "Package",
+              "version": "[1.7.1, )"
+            },
+            "Microsoft.ML.FastTree": {
+              "target": "Package",
+              "version": "[1.7.1, )"
+            },
+            "Microsoft.ML.LightGbm": {
+              "target": "Package",
+              "version": "[1.7.1, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
