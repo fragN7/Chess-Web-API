@@ -8,6 +8,7 @@ import { DetailsPlayerModal } from './DetailsPlayerModal';
 import { DescriptionPlayerModal } from './DescriptionPlayerModal';
 import {createBrowserHistory} from "history";
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import {PredictionPlayerModal} from "./PredictionPlayerModal";
 
 export class Player extends Component{
 
@@ -15,7 +16,7 @@ export class Player extends Component{
         super(props);
         console.log(this.props.username);
         this.state={players:[], currentPage: 1, itemsPerPage: this.props.rows ? this.props.rows : 5, totalPages: 0, user: this.props.username,
-            addModalShow: false, updateModalShow: false, descriptionModalShow:false, detailsModalShow: false
+            addModalShow: false, updateModalShow: false, descriptionModalShow:false, detailsModalShow: false, predictionModalShow: false, score: 0
         };
     }
 
@@ -70,6 +71,17 @@ export class Player extends Component{
         }
     }
 
+    fetchScore(rating, tournaments, championships) {
+        const url = `${process.env.REACT_APP_API}aimodel/${rating}/${tournaments}/${championships}`;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                this.setState({
+                    score: data.score,
+                });
+            });
+    }
+
     handleUserNameClick = (userId) => {
         const history = createBrowserHistory();
         history.push('/users/' + userId);
@@ -88,10 +100,11 @@ export class Player extends Component{
 
     render(){
         const {players, plid, plname, plcountry, plrating, plismaster, plstartyear, pldescription, plchampions, plparticipations, currentPage, totalPages} = this.state;
-        let addModalClose = () => this.setState({addModalShow:false});
-        let updateModalClose = () => this.setState({updateModalShow:false});
+        let addModalClose = () => this.setState({ addModalShow:false });
+        let updateModalClose = () => this.setState({ updateModalShow: false });
         let detailsModalClose = () => this.setState({ detailsModalShow: false });
         let descriptionModalClose = () => this.setState({ descriptionModalShow: false });
+        let predictionModalClose = () => this.setState({ predictionModalShow: false });
 
         let pageButtons = [];
         if (totalPages <= 10) {
@@ -274,7 +287,7 @@ export class Player extends Component{
                                                 descriptionModalShow: true,
                                                 pldescription: player.description
                                             })}>
-                                                <i className="bi bi-info-circle"></i>
+                                                <i className="bi bi-file-text"></i>
                                             </Button>
 
                                             <DescriptionPlayerModal show={this.state.descriptionModalShow}
@@ -295,6 +308,20 @@ export class Player extends Component{
                                                 onHide={detailsModalClose}
                                                 plchampions = {plchampions}
                                                 plparticipations={plparticipations}
+                                                    z
+                                            />
+
+                                            <Button className="mr-1" variant="success" size="sm" onClick={() => {
+                                                this.fetchScore(player.rating, player.playerParticipations.length, player.chessChampions.length)
+                                                this.setState({
+                                                predictionModalShow: true
+                                            })}}>
+                                                <i className="bi bi-question-circle"></i>
+                                            </Button>
+
+                                            <PredictionPlayerModal show={this.state.predictionModalShow}
+                                                   onHide={predictionModalClose}
+                                                   score={this.state.score}
                                             />
 
                                             {((this.state.user && this.state.user === player.tblUser.userName) || this.state.user === "mod" || this.state.user === "admin") &&

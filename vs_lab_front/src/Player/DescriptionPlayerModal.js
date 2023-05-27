@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Modal, Table } from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 
 export class DescriptionPlayerModal extends Component {
   
@@ -10,9 +10,7 @@ export class DescriptionPlayerModal extends Component {
           <Modal.Title id='contained-modal-title-vcenter'>Chess Player Description</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Table striped bordered hover>
               <p>{this.props.pldescription}</p>
-          </Table>
         </Modal.Body>
         <Modal.Footer>
           <Button variant='danger' onClick={this.props.onHide}>
