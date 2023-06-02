@@ -54,6 +54,10 @@ These instructions will guide you on how to get the project up and running on yo
 - Set up and configure the required database.
 - Document any additional steps specific to your project.
 
+## API Endpoint Documentation
+- Please use this link in order to see all endpoints and how they function
+- `https://app.swaggerhub.com/apis-docs/IAGUTAALEN/ChessApi/1.0.0`
+
 ## License
 
 This project is licensed under the [Unilicense](LICENSE).
