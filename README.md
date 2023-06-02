@@ -24,6 +24,7 @@ These instructions will guide you on how to get the project up and running on yo
   dotnet build
   dotnet run
   ```
+- This will automatically open a swagger web page which will show all the current endpoints created.
 
 3. Frontend Setup:
 - Open a new command prompt or terminal window and navigate to the root folder of the React frontend.
