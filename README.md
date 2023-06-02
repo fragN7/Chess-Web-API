@@ -1,4 +1,4 @@
-# Chess Web Rest-Api
+# Chess Web Rest-API
 
 This is a work-in-progress chess REST API that uses the .NET framework with C#. The API includes entities that are in relation to each other and has CRUD operations, various filters and AI model. The front-end is built with React Node.js to create a user-friendly experience. W/ login/register, chat page and deployed on aws amazon and netlify.
 
