@@ -45,7 +45,7 @@ These instructions will guide you on how to get the project up and running on yo
 
 ## Tradeoffs
 
-- Using .NET as the backend technology may have a steeper learning curve but offers robustness and scalability.
+- Using .NET as the backend technology may have a steeper learning curve but offers robustness and scalability and it's fun.
 - React as the frontend framework may have a larger bundle size but provides flexibility and efficient rendering.
 
 ## Additional Information
