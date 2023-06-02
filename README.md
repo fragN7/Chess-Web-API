@@ -88,6 +88,8 @@ Please refer to the [API Endpoint Documentation](https://app.swaggerhub.com/apis
 
 ## Front End Documentation <a name="frontend-documentation"></a>
 
+Please refer to the [Front End Documentation / User Manual](https://app.swaggerhub.com/apis-docs/IAGUTAALEN/ChessApi/1.0.0) for detailed information about the frontend and it's functionalities.
+
 ## Deployment <a name="deployment"></a>
 
 The Chess Web Rest-API is currently deployed on AWS Amazon and Netlify. To deploy the application to your preferred hosting platform, follow these steps:
