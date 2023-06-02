@@ -11,8 +11,8 @@ Chess Web Rest-API is a work-in-progress RESTful API built with .NET and C#. It 
 - [Tradeoffs](#tradeoffs)
 - [Additional Information](#additional-information)
 - [API Endpoint Documentation](#api-endpoint-documentation)
+- [Front End Documentation](#frontend-documentation)
 - [Deployment](#deployment)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Getting Started <a name="getting-started"></a>
@@ -86,6 +86,8 @@ Please keep in mind the following additional information:
 
 Please refer to the [API Endpoint Documentation](https://app.swaggerhub.com/apis-docs/IAGUTAALEN/ChessApi/1.0.0) for detailed information about all the endpoints and their functionality.
 
+## Front End Documentation <a name="frontend-documentation"></a>
+
 ## Deployment <a name="deployment"></a>
 
 The Chess Web Rest-API is currently deployed on AWS Amazon and Netlify. To deploy the application to your preferred hosting platform, follow these steps:
@@ -109,10 +111,6 @@ The Chess Web Rest-API is currently deployed on AWS Amazon and Netlify. To deplo
   ```
 
 - Deploy the generated build artifacts to your hosting platform of choice.
-
-## Contributing <a name="contributing"></a>
-
-Contributions are welcome! If you find any issues or want to enhance the Chess Web Rest-API, feel free to open a pull request. Please make sure to follow the [contributing guidelines](CONTRIBUTING.md).
 
 ## License <a name="license"></a>
 
