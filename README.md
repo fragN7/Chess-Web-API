@@ -14,7 +14,7 @@ These instructions will guide you on how to get the project up and running on yo
 ### Installing
 
 1. Clone the repository to your local machine:
-- git clone 
+- git clone https://github.com/fragN7/Chess-Web-API.git
 
 2. Backend Setup:
 - Open the command prompt or terminal and navigate to the root folder of the backend API.
