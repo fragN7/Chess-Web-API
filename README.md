@@ -11,7 +11,6 @@ Chess Web Rest-API is a work-in-progress RESTful API built with .NET and C#. It 
 - [Tradeoffs](#tradeoffs)
 - [Additional Information](#additional-information)
 - [API Endpoint Documentation](#api-endpoint-documentation)
-- [Front End Documentation](#frontend-documentation)
 - [Deployment](#deployment)
 - [License](#license)
 
@@ -87,10 +86,6 @@ Please keep in mind the following additional information:
 ## API Endpoint Documentation <a name="api-endpoint-documentation"></a>
 
 Please refer to the [API Endpoint Documentation](https://app.swaggerhub.com/apis-docs/IAGUTAALEN/ChessApi/1.0.0) for detailed information about all the endpoints and their functionality.
-
-## Front End Documentation <a name="frontend-documentation"></a>
-
-Please refer to the [Front End Documentation / User Manual](https://app.swaggerhub.com/apis-docs/IAGUTAALEN/ChessApi/1.0.0) for detailed information about the frontend and it's functionalities.
 
 ## Deployment <a name="deployment"></a>
 
