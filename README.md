@@ -25,8 +25,8 @@ Before running the Chess Web Rest-API, ensure that you have the following prereq
 
 - .NET SDK (compatible with your project)
 - Node.js and npm
-- Docker
-- PostgreSQL
+- Docker (optional)
+- PostgreSQL (or preffered SQL Management Service)
 
 ### Installation <a name="installation"></a>
 
