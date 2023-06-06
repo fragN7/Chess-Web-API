@@ -1,8 +1,12 @@
 # Chess Web Rest-API
 
-Chess Web Rest-API is a work-in-progress (95%) RESTful API built with .NET and C#. It provides a backend solution for a chess application with features like, including CRUD operations, filters, an AI Model and a chat page.
+Chess Web Rest-API is a work-in-progress (95%) RESTful API built with .NET and C#. 
+It provides a backend solution for a chess application with features like:
 
-The application includes simple CRUD operations, but also bulk adding, deleting and various more complex endpoints. You can check them in the link below. 
+-simple CRUD operations, but also bulk adding, deleting and various more complex endpoints. You can check them in the link below.
+-an AI Model which was auto-generated with Visual Studio ML and predicts the probability of being a champion, based on their rating, championships and number of tournaments participated
+-chat page (only for logged in users)
+
 The frontend part of the app displays an user friendly experience, authentication, security, no profanity check tho (I'm planning to keep it like this) and more.
 
 The API is designed to be used in conjunction with a React frontend to create a user-friendly chess experience. The application is deployed on AWS Amazon and Netlify.
