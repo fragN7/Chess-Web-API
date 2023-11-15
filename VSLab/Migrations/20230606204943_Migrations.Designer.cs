@@ -11,7 +11,7 @@ using VSLab.Data;
 namespace VSLab.Migrations
 {
     [DbContext(typeof(ChessDbContext))]
-    [Migration("20230508214218_Migrations")]
+    [Migration("20230606204943_Migrations")]
     partial class Migrations
     {
         /// <inheritdoc />
@@ -55,6 +55,10 @@ namespace VSLab.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("Roles")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("text");
@@ -62,6 +66,27 @@ namespace VSLab.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("tblUserProfiles");
+                });
+
+            modelBuilder.Entity("VSLab.Data.tblChatMessage", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+
+                    b.Property<string>("message")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("username")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("tblChatMessages");
                 });
 
             modelBuilder.Entity("VSLab.Data.tblChessChampion", b =>

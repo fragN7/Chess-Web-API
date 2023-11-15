@@ -1017,3 +1017,7 @@ C:\Users\Alen\Documents\GithubPrivate\Chess-Web-API\VSLab\bin\Debug\net7.0\runti
 C:\Users\Alen\Documents\GithubPrivate\Chess-Web-API\VSLab\bin\Debug\net7.0\runtimes\osx-x64\native\libFastTreeNative.dylib
 C:\Users\Alen\Documents\GithubPrivate\Chess-Web-API\VSLab\bin\Debug\net7.0\runtimes\win-x64\native\FastTreeNative.dll
 C:\Users\Alen\Documents\GithubPrivate\Chess-Web-API\VSLab\bin\Debug\net7.0\runtimes\win-x86\native\FastTreeNative.dll
+C:\Users\Alen\Documents\GithubPrivate\Chess-Web-API\VSLab\bin\Debug\net7.0\MLModel.zip
+C:\Users\Alen\Documents\GithubPrivate\Chess-Web-API\VSLab\bin\Debug\net7.0\Scrutor.dll
+C:\Users\Alen\Documents\GithubPrivate\Chess-Web-API\VSLab\bin\Debug\net7.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\Alen\Documents\GithubPrivate\Chess-Web-API\VSLab\bin\Debug\net7.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll

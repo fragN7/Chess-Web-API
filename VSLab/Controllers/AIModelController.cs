@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using VSLab.ChessAiModel;
+using VSLab;
 
 namespace VSLab.Controllers
 {

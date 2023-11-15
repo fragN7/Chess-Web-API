@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.ML.Data;
-using Microsoft.ML.Trainers.FastTree;
+using Microsoft.ML.Trainers.LightGbm;
 using Microsoft.ML.Trainers;
 using Microsoft.ML;
 
-namespace VSLab.ChessAiModel
+namespace VSLab
 {
     public partial class MLModel
     {
@@ -37,7 +37,7 @@ namespace VSLab.ChessAiModel
             // Data process configuration with pipeline data transformations
             var pipeline = mlContext.Transforms.ReplaceMissingValues(new []{new InputOutputColumnPair(@"id", @"id"),new InputOutputColumnPair(@"rating", @"rating"),new InputOutputColumnPair(@"tournaments", @"tournaments"),new InputOutputColumnPair(@"champions", @"champions")})      
                                     .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"id",@"rating",@"tournaments",@"champions"}))      
-                                    .Append(mlContext.Regression.Trainers.FastTree(new FastTreeRegressionTrainer.Options(){NumberOfLeaves=12,MinimumExampleCountPerLeaf=126,NumberOfTrees=4,MaximumBinCountPerFeature=428,FeatureFraction=0.693842944096537,LearningRate=0.999999776672986,LabelColumnName=@"championNext",FeatureColumnName=@"Features"}));
+                                    .Append(mlContext.Regression.Trainers.LightGbm(new LightGbmRegressionTrainer.Options(){NumberOfLeaves=9,NumberOfIterations=6,MinimumExampleCountPerLeaf=20,LearningRate=0.917261246399143,LabelColumnName=@"championNext",FeatureColumnName=@"Features",ExampleWeightColumnName=null,Booster=new GradientBooster.Options(){SubsampleFraction=0.122950039657781,FeatureFraction=0.965231819608788,L1Regularization=5.61177311667497E-10,L2Regularization=0.999999776672986},MaximumBinCountPerFeature=279}));
 
             return pipeline;
         }

@@ -1,13 +1,12 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using VSLab.Data;
 using VSLab.Data.Security;
-
 
 namespace VSLab.Controllers
 {
@@ -16,15 +15,14 @@ namespace VSLab.Controllers
     public class UserProfilesController : ControllerBase
     {
         private readonly ChessDbContext _context;
-        private readonly IConfiguration _config;
+        private readonly IConfiguration config;
 
         public UserProfilesController(ChessDbContext context, IConfiguration config)
         {
             _context = context;
-            _config = config;
+            this.config = config;
         }
 
-        [AllowAnonymous]
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] dtoUserProfile model)
         {
@@ -53,7 +51,6 @@ namespace VSLab.Controllers
             return Ok(new { message = "User created successfully", confirmationCode });
         }
         
-        [AllowAnonymous]
         [HttpPost("register/confirm/{confirmation}")]
         public async Task<IActionResult> RegisterConfirm(string confirmation)
         {
@@ -70,28 +67,34 @@ namespace VSLab.Controllers
             return Ok(new { message = "Registration confirmed" });
         }
 
-        [AllowAnonymous]
         [HttpPost("login")]
-        public Task<IActionResult> Login([FromBody] dtoLoginProfile model)
+        public ActionResult<dtoLoginResponseProfile> Login([FromBody] dtoLoginProfile model)
         {
             var user = _context.tblUserProfiles.FirstOrDefault(u => u.UserName == model.UserName);
 
             if (user!.IsActive == false)
             {
-                return Task.FromResult<IActionResult>(Unauthorized("User not active"));
+                throw new Exception("User not active");
             }
 
             if (!BCrypt.Net.BCrypt.Verify(model.Password, user.Password))
             {
-                return Task.FromResult<IActionResult>(Unauthorized("Invalid password"));
+                throw new Exception("Incorrect password");
             }
 
             var tokenString = GenerateJwtToken(user);
 
-            return Task.FromResult<IActionResult>(Ok(new { token = tokenString, user }));
+            var result = new dtoLoginResponseProfile
+            {
+                Token = tokenString,
+                User = user
+            };
+
+            return Ok(result);
         }
         
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<tblChessPlayer>> GetUserID(int id)
         {
             var user = await _context.tblUserProfiles
@@ -107,6 +110,7 @@ namespace VSLab.Controllers
             return Ok(user);
         }
         
+        [Authorize(Roles = "Normal")]
         [HttpGet("username/{username}")]
         public async Task<ActionResult<tblChessPlayer>> GetUsername(string username)
         {
@@ -121,6 +125,7 @@ namespace VSLab.Controllers
             return Ok(user);
         }
         
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUserProfile(int id, [FromBody] dtoUserProfile userProfileDto)
         {
@@ -138,23 +143,22 @@ namespace VSLab.Controllers
             return Ok(userProfile);
         }
 
-
         private string GenerateJwtToken(tblUserProfile user)
         {
 
-            List<Claim> claims = new List<Claim> {
-                new Claim(ClaimTypes.Name, user.UserName),
-                new Claim(ClaimTypes.Role, "Admin"),
-                new Claim(ClaimTypes.Role, "User"),
-                new Claim(ClaimTypes.Role, "Moderator")
+            var claims = new List<Claim> {
+                new Claim(ClaimTypes.NameIdentifier, user.ID.ToString())
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetValue<string>("Jwt:Token")!));
+            var key = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(this.config.GetSection("AppSettings:Key").Value!
+                ));
+
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
 
             var token = new JwtSecurityToken(
                 claims: claims,
-                expires: DateTime.Now.AddDays(1),
+                expires: DateTime.Now.AddHours(1),
                 signingCredentials: creds
             );
 

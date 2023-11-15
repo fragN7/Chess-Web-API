@@ -6,7 +6,7 @@ using System.Linq;
 using System.IO;
 using System.Collections.Generic;
 
-namespace VSLab.ChessAiModel
+namespace VSLab
 {
     public partial class MLModel
     {

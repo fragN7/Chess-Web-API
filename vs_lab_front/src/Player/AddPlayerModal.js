@@ -24,7 +24,7 @@ export class AddPlayerModal extends Component {
     }
 
     handleSubmit(event){
-        event.preventDefault();
+        //event.preventDefault();
 
         fetch(process.env.REACT_APP_API+'chessplayers',{
             method:'POST',
@@ -39,7 +39,7 @@ export class AddPlayerModal extends Component {
                 isMaster:event.target.isMaster.value,
                 startYear: event.target.startYear.value,
                 description: event.target.description.value,
-                userId: this.state.userID
+                userId: 5
             })
         })
         .then(res=>res.json())
@@ -71,59 +71,28 @@ export class AddPlayerModal extends Component {
                                         <Form.Label>Name</Form.Label>
                                         <Form.Control type="text" name="name" required 
                                         placeholder="Name"/>
-                                    </Form.Group>
-                                    <Form.Group controlId="Country">
+                                    
                                         <Form.Label>Country</Form.Label>
                                         <Form.Control type="text" name="country" required 
                                         placeholder="Country"/>
-                                    </Form.Group>
-                                    <Form.Group controlId="Rating">
+                                    
                                         <Form.Label>Rating</Form.Label>
                                         <Form.Control type="number" name="rating" required 
                                         placeholder="0-5000"/>
-                                    </Form.Group>
-                                    <Form.Group controlId="IsMaster">
+                                    
                                         <Form.Label>IsMaster</Form.Label>
                                         <Form.Control type="number" name="isMaster" required 
                                         placeholder="0 or 1"/>
-                                    </Form.Group>
-                                    <Form.Group controlId="PlayerStartYear">
+                                    
                                         <Form.Label>StartYear</Form.Label>
                                         <Form.Control type="number" name="startYear" required 
                                         placeholder="1701-2023"/>
-                                    </Form.Group>
-
-                                    <Form.Group controlId="Description">
+                                   
                                         <Form.Label>Description</Form.Label>
                                         <Form.Control type="text" name="description" required 
                                         placeholder="Short description about player"/>
-                                    </Form.Group>
-
-                                    <Form.Group controlId="UserID">
-                                        <Form.Label>User ID</Form.Label>
-                                        <Typeahead
-                                            labelKey="email"
-                                            id="user-id-input"
-                                            options={this.state.searchResults}
-                                            placeholder="Select a User..."
-                                            onChange={(selected) => {
-                                                if (selected && selected.length > 0) {
-                                                    this.setState({ userID: selected[0].id });
-                                                } else {
-                                                    this.setState({ userID: null });
-                                                }
-                                            }}
-                                            filterBy={['email']}
-                                            renderMenuItemChildren={(option, props, idx) => (
-                                                <div key={option.id}>
-                                                    {option.email}
-                                                </div>
-                                            )}
-                                        />
-                                    </Form.Group>
-
-                                    <Form.Group className="my-3">
-                                        <Button variant="primary" type="submit" onClick={this.props.onHide}>
+                                        
+                                        <Button variant="primary" type="submit">
                                             Add Chess Player
                                         </Button>
                                     </Form.Group>

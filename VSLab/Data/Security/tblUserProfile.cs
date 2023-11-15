@@ -7,6 +7,7 @@ public class tblUserProfile
     public string Password { get; set; } = string.Empty;
     public string UserName { get; set; } = string.Empty;
     public string Bio { get; set; } = string.Empty;
+    public string Roles { get; set; } = "Normal";
     public string BirthDate { get; set; } = string.Empty;
     public string PhoneNumber { get; set; } = string.Empty;
     public string ConfirmationCode { get; set; } = string.Empty;

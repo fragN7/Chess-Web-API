@@ -10,8 +10,15 @@ import {createBrowserHistory} from "history";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import {PredictionPlayerModal} from "./PredictionPlayerModal";
 
+/**
+ * Player component.
+ * Renders a table of players with various options.
+ */
 export class Player extends Component{
-
+    /**
+     * Creates an instance of the Player component.
+     * @param {Object} props - The component properties.
+     */
     constructor(props){
         super(props);
         console.log(this.props.username);
@@ -20,6 +27,9 @@ export class Player extends Component{
         };
     }
 
+    /**
+     * Fetches the player data from the API and updates the component state.
+     */
     refreshList() {
         const { currentPage, itemsPerPage } = this.state;
         const url = `${process.env.REACT_APP_API}chessplayers?page=${currentPage}&limit=${itemsPerPage}`;
@@ -48,6 +58,10 @@ export class Player extends Component{
           });
     }
 
+    /**
+     * Lifecycle method called after the component is mounted.
+     * It refreshes the player list and sets the user role based on the props.
+     */
     componentDidMount(){
         this.refreshList();
         if (this.state.user === "admin") {
@@ -61,6 +75,10 @@ export class Player extends Component{
         }
     }
 
+    /**
+     * Deletes a player.
+     * @param {number} plid - The player ID.
+     */
     deletePlayer(plid){
         if(window.confirm('Are you sure?')){
             fetch(process.env.REACT_APP_API+'chessplayers/'+plid,{
@@ -70,7 +88,13 @@ export class Player extends Component{
             })
         }
     }
-
+    
+    /**
+     * Function which calls the AI endpoint to get champion probability
+     * @param {number} rating - Player chess rating
+     * @param {number} tournaments - Number of tournaments participated
+     * @param {number} championships - Number of championships
+     * */
     fetchScore(rating, tournaments, championships) {
         const url = `${process.env.REACT_APP_API}aimodel/${rating}/${tournaments}/${championships}`;
         fetch(url)
@@ -81,23 +105,35 @@ export class Player extends Component{
                 });
             });
     }
-
+    
+    /**
+     * Redirects the user to the user's profile page
+     * */
     handleUserNameClick = (userId) => {
         const history = createBrowserHistory();
         history.push('/users/' + userId);
         window.location.reload();
     };
 
+    /**
+     * Redirects the user to the user's profile page
+     * */
     ratingSort(){
         let playas = this.state.players;
         playas.sort((a,b) => b.rating - a.rating);
         this.setState({players: playas});
     }
 
+    /**
+     * Changing the page number
+     * */
     handlePageChange = (pageNumber) => {
         this.setState({ currentPage: pageNumber }, this.refreshList);
     };
 
+    /**
+     * Main render function
+     * */
     render(){
         const {players, plid, plname, plcountry, plrating, plismaster, plstartyear, pldescription, plchampions, plparticipations, currentPage, totalPages} = this.state;
         let addModalClose = () => this.setState({ addModalShow:false });

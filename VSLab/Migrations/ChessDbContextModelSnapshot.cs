@@ -52,6 +52,10 @@ namespace VSLab.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("Roles")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("text");

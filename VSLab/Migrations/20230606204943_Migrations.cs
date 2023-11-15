@@ -12,6 +12,20 @@ namespace VSLab.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "tblChatMessages",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    message = table.Column<string>(type: "text", nullable: false),
+                    username = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_tblChatMessages", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "tblUserProfiles",
                 columns: table => new
                 {
@@ -20,6 +34,7 @@ namespace VSLab.Migrations
                     Password = table.Column<string>(type: "text", nullable: false),
                     UserName = table.Column<string>(type: "text", nullable: false),
                     Bio = table.Column<string>(type: "text", nullable: false),
+                    Roles = table.Column<string>(type: "text", nullable: false),
                     BirthDate = table.Column<string>(type: "text", nullable: false),
                     PhoneNumber = table.Column<string>(type: "text", nullable: false),
                     ConfirmationCode = table.Column<string>(type: "text", nullable: false),
@@ -156,6 +171,9 @@ namespace VSLab.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "tblChatMessages");
+
             migrationBuilder.DropTable(
                 name: "tblChessChampions");
 

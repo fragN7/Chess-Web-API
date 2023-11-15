@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RmDJoOSCJwlSwwKAa0XB+TFJ3sLmev+ZKo50hrMW+3gfOiaq1l74s8/ElZJyScM++1W8ugRrGFgUwk4jmN2lOg==",
+  "dgSpecHash": "OssP0JX6fd2ahZp4Qz967NKWlkOix18bXIFYByNfw/JVq4FVGuwMF1DFeaNj6u1pZmH5fnR/axwJnXdY/gi5sA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Alen\\Documents\\GithubPrivate\\Chess-Web-API\\VSLab\\VSLab.csproj",
   "expectedPackageFiles": [
@@ -101,7 +101,7 @@
     "C:\\Users\\Alen\\.nuget\\packages\\microsoft.net.test.sdk\\17.5.0\\microsoft.net.test.sdk.17.5.0.nupkg.sha512",
     "C:\\Users\\Alen\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.1\\microsoft.netcore.platforms.1.1.1.nupkg.sha512",
     "C:\\Users\\Alen\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
-    "C:\\Users\\Alen\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Alen\\.nuget\\packages\\microsoft.openapi\\1.3.1\\microsoft.openapi.1.3.1.nupkg.sha512",
     "C:\\Users\\Alen\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\Alen\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.5.0\\microsoft.testplatform.objectmodel.17.5.0.nupkg.sha512",
     "C:\\Users\\Alen\\.nuget\\packages\\microsoft.testplatform.testhost\\17.5.0\\microsoft.testplatform.testhost.17.5.0.nupkg.sha512",
@@ -156,7 +156,10 @@
     "C:\\Users\\Alen\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Alen\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Alen\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Alen\\.nuget\\packages\\scrutor\\3.3.0\\scrutor.3.3.0.nupkg.sha512",
     "C:\\Users\\Alen\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\Alen\\.nuget\\packages\\swashbuckle.aspnetcore.filters\\7.0.6\\swashbuckle.aspnetcore.filters.7.0.6.nupkg.sha512",
+    "C:\\Users\\Alen\\.nuget\\packages\\swashbuckle.aspnetcore.filters.abstractions\\7.0.6\\swashbuckle.aspnetcore.filters.abstractions.7.0.6.nupkg.sha512",
     "C:\\Users\\Alen\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\Alen\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
     "C:\\Users\\Alen\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",

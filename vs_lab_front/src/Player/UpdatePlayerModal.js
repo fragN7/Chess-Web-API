@@ -135,7 +135,7 @@ export class UpdatePlayerModal extends Component {
                                     </Form.Group>
 
                                     <Form.Group className="my-3">
-                                        <Button variant="primary" type="submit" onClick={this.props.onHide}>
+                                        <Button variant="primary" type="submit">
                                             Update Chess Player
                                         </Button>
                                     </Form.Group>
